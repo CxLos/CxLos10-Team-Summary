@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "inquirer": "^8.2.5"
+  },
+  "name": "cxlos10-team-summary",
+  "description": "Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CxLos/CxLos10-Team-Summary.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CxLos/CxLos10-Team-Summary/issues"
+  },
+  "homepage": "https://github.com/CxLos/CxLos10-Team-Summary#readme"
+}
