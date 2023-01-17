@@ -1,11 +1,80 @@
-<!DOCTYPE html>
+// variables
+const inquirer = require('inquirer');
+const fs = require('fs');
+
+// Welcome message
+console.log( 'Welcome to the CxLos10 Team Generator! Please answer the questions below to fill out the form.');
+
+// Prompts
+inquirer.prompt(
+    [
+        {
+            type: 'input',
+            name: 'file',
+            message: "Please name this file",
+            validate: (value)=>{ if(value){return true} else {return 'Please enter a file name.'}}
+        },
+        {
+            type: 'input',
+            name: 'doc',
+            message: "What is the title of this document?",
+            validate: (value)=>{ if(value){return true} else {return 'Please enter document name.'}}
+        },
+        {
+            type: 'input',
+            name: 'internName',
+            message: "What is the employee's name?",
+            validate: (value)=>{ if(value){return true} else {return 'Please enter employee name.'}}
+        },
+        {
+            type: 'list',
+            name: 'position',
+            message: "What is the employee's position?",
+            choices: ['Manager', 'Intern', 'Engineer', 'Employee'],
+            validate: (value)=>{ if(value){return true} else {return 'Please enter employee position.'}}
+        },
+        {
+            type: 'input',
+            name: 'internId',
+            message: "What is the intern's ID?",
+            validate: (value)=>{ if(value){return true} else {return 'Please enter Intern ID.'}}
+        },
+        {
+            type: 'input',
+            name: 'internEmail',
+            message: "What is the intern's e-mail?",
+            validate: (value)=>{ if(value){return true} else {return 'Please enter Intern e-mail.'}}
+        },
+        {
+            type: 'input',
+            name: 'internGit',
+            message: "What is the intern's GitHub?",
+            validate: (value)=>{ if(value){return true} else {return 'Please enter Intern GitHub.'}}
+        },
+    
+    ]
+    
+).then(({
+    file,
+    doc,
+    position,
+    internName,
+    internEmail,
+    internGit,
+    internId,
+
+}) => {
+    // HTML Template
+    const template =
+
+`<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cxlos10</title>
+    <title>${doc}</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -19,18 +88,18 @@
             
             <div id="ebox">
                 <div id="top">
-                    <h1>Carlos</h1>
-                    <h2>Manager</h2>
+                    <h1>${internName}</h1>
+                    <h2>${position}</h2>
                 </div>
                 <div id="bottom">
                     <div id="info">
-                        <p>ID: 13548</p>
+                        <p>ID: ${internId}</p>
                     </div>
                     <div id="info">
-                        <p>E-Mail: <a href="mailto:cxlos_864@aol.com">cxlos_864@aol.com</a></p>
+                        <p>E-Mail: <a href="mailto:${internEmail}">${internEmail}</a></p>
                     </div>
                     <div id="info">
-                        <p>GitHub: <a href="https://github.com/cxlos">cxlos</a></p>
+                        <p>GitHub: <a href="https://github.com/${internGit}">${internGit}</a></p>
                     </div>
                 </div>
             </div>
@@ -111,4 +180,27 @@
     
     <script src="./js/index.js"></script>
 </body>
-</html>
+</html>`;
+
+    nuFile(file, template);
+});
+
+// Generate HTML
+function nuFile(fileName, data){
+    fs.writeFile(`./${fileName}.html`,data,(err)=>{
+        if (err){
+            console.log(err)
+        }
+        console.log('Team Summary successfully generated!');
+    })
+}
+
+// Testing
+function Index() {}
+
+Index.prototype.testing = function() {
+    const test = 'this works';
+    return test;
+};
+
+module.exports = Index;

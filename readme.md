@@ -2,12 +2,7 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+The motivation behind constructing this application is to be able to neatly organize team members' info all in one document. This application is designed to solve issues with organization so that a manager can better keep track of their records. working on this project, I learned how to use the command line to prompt me to answer questions and then when I answer those questions, an html document is generated. I also learned how to implement testing into my project to test the functionality of my code.
 
 ## Table of Contents
 
@@ -23,27 +18,13 @@ Provide a short description explaining the what, why, and how of your project. U
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+[Please watch video](https://drive.google.com/file/d/12bkddflo-5NdVi8bj5n5tzYeCvQke3_K/view)
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
-
 [CxLos10 Team Summary](https://cxlos.github.io/Cxlos10-Team-Summary/)
 
-![Team Summary Preview](./assets/images/Screenshot-.png)
-
-## Credits
-
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
+![Team Summary Preview](./assets/images/Screenshot-192707.png)
 
 ## Badges
 
@@ -59,7 +40,11 @@ N/A
 
 ## Tests
 
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+N/A
+
+## Credits
+
+N/A
 
 ## License
 

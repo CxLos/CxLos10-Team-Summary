@@ -30,7 +30,7 @@ inquirer.prompt(
             type: 'list',
             name: 'position',
             message: "What is the employee's position?",
-            choices: ['Manager', 'Intern', 'Engineer'],
+            choices: ['Manager', 'Intern', 'Engineer', 'Employee'],
             validate: (value)=>{ if(value){return true} else {return 'Please enter employee position.'}}
         },
         {
@@ -51,6 +51,18 @@ inquirer.prompt(
             message: "What is the intern's GitHub?",
             validate: (value)=>{ if(value){return true} else {return 'Please enter Intern GitHub.'}}
         },
+        {
+            type: 'input',
+            name: 'school',
+            message: "What is the intern's School?",
+            validate: (value)=>{ if(value){return true} else {return 'Please enter Intern School.'}}
+        },
+        {
+            type: 'input',
+            name: 'office',
+            message: "What is the intern's Office#?",
+            validate: (value)=>{ if(value){return true} else {return 'Please enter Office#.'}}
+        },
     
     ]
     
@@ -62,6 +74,8 @@ inquirer.prompt(
     internEmail,
     internGit,
     internId,
+    school,
+    office,
 
 }) => {
     // HTML Template
@@ -75,7 +89,7 @@ inquirer.prompt(
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${doc}</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -101,12 +115,18 @@ inquirer.prompt(
                     <div id="info">
                         <p>GitHub: <a href="https://github.com/${internGit}">${internGit}</a></p>
                     </div>
+                    <div id="info">
+                    <p>School: ${school}</p>
+                </div>
+                <div id="info">
+                    <p>Office#: ${office}</p>
+                </div>
                 </div>
             </div>
             <div id="ebox">
                 <div id="top">
-                    <h1>Carlos</h1>
-                    <h2>Employee</h2>
+                    <h1>Name</h1>
+                    <h2>Position</h2>
                 </div>
                 <div id="bottom">
                     <div id="info">
@@ -122,8 +142,8 @@ inquirer.prompt(
             </div>
             <div id="ebox">
                 <div id="top">
-                    <h1>Carlos</h1>
-                    <h2>Employee</h2>
+                    <h1>Name</h1>
+                    <h2>Position</h2>
                 </div>
                 <div id="bottom">
                     <div id="info">
@@ -143,8 +163,8 @@ inquirer.prompt(
         <div id="line1">
             <div id="ebox">
                 <div id="top">
-                    <h1>Carlos</h1>
-                    <h2>Employee</h2>
+                    <h1>Name</h1>
+                    <h2>Position</h2>
                 </div>
                 <div id="bottom">
                     <div id="info">
@@ -160,8 +180,8 @@ inquirer.prompt(
             </div>
             <div id="ebox">
                 <div id="top">
-                    <h1>Carlos</h1>
-                    <h2>Employee</h2>
+                    <h1>Name</h1>
+                    <h2>Position</h2>
                 </div>
                 <div id="bottom">
                     <div id="info">
@@ -177,8 +197,6 @@ inquirer.prompt(
             </div>
         </div>
     </mian>
-    
-    <script src="./js/index.js"></script>
 </body>
 </html>`;
 
@@ -195,12 +213,12 @@ function nuFile(fileName, data){
     })
 }
 
-function algo() {}
+// // Testing
+// function Index() {}
 
-algo.prototype.hello = function() {
-    console.log('Hello');
-};
+// Index.prototype.testing = function() {
+//     const test = 'this works';
+//     return test;
+// };
 
-module.exports = algo;
-
-// export const hello = () => 'Hello';
+// module.exports = Index;
